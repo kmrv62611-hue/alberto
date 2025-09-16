@@ -1,0 +1,624 @@
+/* Watch Details Section */
+.watch-details {
+  padding: 100px 0;
+  background: linear-gradient(135deg, #f8fafc 0%, #e2e8f0 100%);
+  position: relative;
+}
+
+.watch-details::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-image: 
+    radial-gradient(circle at 30% 20%, rgba(249, 115, 22, 0.05) 0%, transparent 50%),
+    radial-gradient(circle at 70% 80%, rgba(99, 102, 241, 0.05) 0%, transparent 50%);
+  pointer-events: none;
+}
+
+/* Header */
+.details-header {
+  text-align: center;
+  margin-bottom: 4rem;
+  position: relative;
+  z-index: 2;
+}
+
+.details-heading {
+  font-size: clamp(2.5rem, 5vw, 4rem);
+  font-weight: 700;
+  color: #1f2937;
+  margin-bottom: 1rem;
+  position: relative;
+}
+
+.details-heading::after {
+  content: '';
+  position: absolute;
+  bottom: -10px;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 120px;
+  height: 4px;
+  background: linear-gradient(135deg, #f97316, #ea580c);
+  border-radius: 2px;
+}
+
+.details-subtitle {
+  font-size: 1.2rem;
+  color: #6b7280;
+  max-width: 700px;
+  margin: 0 auto;
+  line-height: 1.6;
+}
+
+/* Grid Layout */
+.details-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+  gap: 2rem;
+  position: relative;
+  z-index: 2;
+}
+
+/* Watch Cards */
+.watch-card {
+  background: white;
+  border-radius: 25px;
+  overflow: hidden;
+  box-shadow: 0 15px 50px rgba(0, 0, 0, 0.1);
+  transition: all 0.4s ease;
+  position: relative;
+}
+
+.watch-card::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: linear-gradient(135deg, #f97316, #ea580c);
+  opacity: 0;
+  transition: opacity 0.3s ease;
+  z-index: 1;
+  border-radius: 25px;
+}
+
+.watch-card:hover::before {
+  opacity: 0.05;
+}
+
+.watch-card:hover {
+  transform: translateY(-15px);
+  box-shadow: 0 25px 70px rgba(0, 0, 0, 0.15);
+}
+
+/* Image Wrapper */
+.watch-image-wrapper {
+  position: relative;
+  height: 280px;
+  overflow: hidden;
+  border-radius: 25px 25px 0 0;
+}
+
+.watch-card img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform 0.5s ease;
+}
+
+.watch-card:hover img {
+  transform: scale(1.1);
+}
+
+.watch-category {
+  position: absolute;
+  top: 1rem;
+  left: 1rem;
+  background: linear-gradient(135deg, #f97316, #ea580c);
+  color: white;
+  padding: 0.5rem 1rem;
+  border-radius: 20px;
+  font-size: 0.8rem;
+  font-weight: 600;
+  z-index: 3;
+}
+
+.watch-overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: rgba(0, 0, 0, 0.6);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  opacity: 0;
+  transition: opacity 0.3s ease;
+  z-index: 2;
+}
+
+.watch-card:hover .watch-overlay {
+  opacity: 1;
+}
+
+.quick-view-btn {
+  background: white;
+  color: #1f2937;
+  border: none;
+  padding: 1rem 2rem;
+  border-radius: 50px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  transform: translateY(20px);
+}
+
+.watch-card:hover .quick-view-btn {
+  transform: translateY(0);
+}
+
+.quick-view-btn:hover {
+  background: #f97316;
+  color: white;
+  transform: scale(1.05);
+}
+
+/* Watch Info */
+.watch-info {
+  padding: 2rem;
+  position: relative;
+  z-index: 2;
+}
+
+.watch-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  margin-bottom: 1rem;
+}
+
+.watch-name {
+  font-size: 1.5rem;
+  font-weight: 600;
+  color: #1f2937;
+  margin: 0;
+}
+
+.watch-price {
+  font-size: 1.3rem;
+  font-weight: 700;
+  color: #f97316;
+  white-space: nowrap;
+}
+
+/* Rating */
+.watch-rating {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  margin-bottom: 1.5rem;
+}
+
+.stars {
+  display: flex;
+  gap: 0.1rem;
+}
+
+.star {
+  color: #d1d5db;
+  font-size: 1.2rem;
+  transition: color 0.2s ease;
+}
+
+.star.filled {
+  color: #fbbf24;
+}
+
+.rating-text {
+  font-size: 0.9rem;
+  color: #6b7280;
+  font-weight: 500;
+}
+
+/* Specifications */
+.watch-specs {
+  list-style: none;
+  padding: 0;
+  margin: 0 0 2rem 0;
+}
+
+.watch-specs li {
+  display: flex;
+  align-items: center;
+  padding: 0.8rem 0;
+  border-bottom: 1px solid #f3f4f6;
+  font-size: 0.9rem;
+}
+
+.watch-specs li:last-child {
+  border-bottom: none;
+}
+
+.spec-icon {
+  font-size: 1.1rem;
+  margin-right: 0.8rem;
+  width: 20px;
+  text-align: center;
+}
+
+.spec-label {
+  font-weight: 600;
+  color: #374151;
+  margin-right: 0.5rem;
+  flex-shrink: 0;
+}
+
+.spec-value {
+  color: #6b7280;
+  margin-left: auto;
+  font-weight: 500;
+}
+
+/* Actions */
+.watch-actions {
+  display: flex;
+  gap: 1rem;
+}
+
+.store-btn {
+  flex: 1;
+  background: linear-gradient(135deg, #f97316, #ea580c);
+  color: white;
+  border: none;
+  padding: 1rem;
+  border-radius: 15px;
+  font-weight: 600;
+  cursor: pointer;
+  position: relative;
+  overflow: hidden;
+  transition: all 0.3s ease;
+}
+
+.store-btn span {
+  position: relative;
+  z-index: 2;
+}
+
+.btn-glow {
+  position: absolute;
+  top: 0;
+  left: -100%;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.3), transparent);
+  transition: left 0.5s ease;
+}
+
+.store-btn:hover .btn-glow {
+  left: 100%;
+}
+
+.store-btn:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 8px 25px rgba(249, 115, 22, 0.4);
+}
+
+.details-btn {
+  background: transparent;
+  color: #f97316;
+  border: 2px solid #f97316;
+  padding: 1rem 1.5rem;
+  border-radius: 15px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.details-btn:hover {
+  background: #f97316;
+  color: white;
+  transform: translateY(-2px);
+}
+
+/* Modal Styles */
+.watch-modal-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: rgba(0, 0, 0, 0.8);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 1000;
+  padding: 2rem;
+  backdrop-filter: blur(5px);
+  animation: modalFadeIn 0.3s ease;
+}
+
+@keyframes modalFadeIn {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+.watch-modal {
+  background: white;
+  border-radius: 25px;
+  overflow: hidden;
+  max-width: 900px;
+  max-height: 90vh;
+  width: 100%;
+  position: relative;
+  animation: modalSlideIn 0.3s ease;
+  overflow-y: auto;
+}
+
+@keyframes modalSlideIn {
+  from {
+    opacity: 0;
+    transform: translateY(50px) scale(0.9);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0) scale(1);
+  }
+}
+
+.modal-close {
+  position: absolute;
+  top: 1rem;
+  right: 1rem;
+  background: rgba(0, 0, 0, 0.8);
+  color: white;
+  border: none;
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  font-size: 1.5rem;
+  cursor: pointer;
+  z-index: 10;
+  transition: all 0.3s ease;
+}
+
+.modal-close:hover {
+  background: #f97316;
+  transform: rotate(90deg);
+}
+
+.modal-content {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  min-height: 500px;
+}
+
+.modal-image {
+  position: relative;
+  overflow: hidden;
+}
+
+.modal-image img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.modal-info {
+  padding: 2rem;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+.modal-header {
+  margin-bottom: 1rem;
+}
+
+.modal-header h3 {
+  font-size: 2rem;
+  font-weight: 700;
+  color: #1f2937;
+  margin: 0 0 0.5rem 0;
+}
+
+.modal-price {
+  font-size: 1.8rem;
+  font-weight: 700;
+  color: #f97316;
+}
+
+.modal-rating {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  margin-bottom: 2rem;
+}
+
+.modal-specs h4,
+.modal-features h4 {
+  font-size: 1.2rem;
+  font-weight: 600;
+  color: #1f2937;
+  margin-bottom: 1rem;
+}
+
+.modal-specs ul,
+.modal-features ul {
+  list-style: none;
+  padding: 0;
+  margin-bottom: 2rem;
+}
+
+.modal-specs li {
+  display: flex;
+  align-items: center;
+  padding: 0.5rem 0;
+  font-size: 0.9rem;
+}
+
+.modal-features li {
+  padding: 0.3rem 0;
+  font-size: 0.9rem;
+  color: #6b7280;
+}
+
+.modal-features li::before {
+  content: '✓';
+  color: #10b981;
+  font-weight: bold;
+  margin-right: 0.5rem;
+}
+
+.modal-actions {
+  display: flex;
+  gap: 1rem;
+  margin-top: auto;
+}
+
+.modal-store-btn,
+.modal-contact-btn {
+  flex: 1;
+  padding: 1rem;
+  border-radius: 15px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.modal-store-btn {
+  background: linear-gradient(135deg, #f97316, #ea580c);
+  color: white;
+  border: none;
+}
+
+.modal-contact-btn {
+  background: transparent;
+  color: #f97316;
+  border: 2px solid #f97316;
+}
+
+.modal-store-btn:hover,
+.modal-contact-btn:hover {
+  transform: translateY(-2px);
+}
+
+.modal-contact-btn:hover {
+  background: #f97316;
+  color: white;
+}
+
+/* Mobile Responsive */
+@media (max-width: 768px) {
+  .watch-details {
+    padding: 80px 0;
+  }
+  
+  .details-grid {
+    grid-template-columns: 1fr;
+    gap: 2rem;
+  }
+  
+  .watch-card {
+    max-width: 400px;
+    margin: 0 auto;
+  }
+  
+  .watch-actions {
+    flex-direction: column;
+  }
+  
+  .modal-content {
+    grid-template-columns: 1fr;
+  }
+  
+  .modal-image {
+    height: 300px;
+  }
+  
+  .modal-info {
+    padding: 1.5rem;
+  }
+  
+  .modal-actions {
+    flex-direction: column;
+  }
+}
+
+@media (max-width: 480px) {
+  .watch-details {
+    padding: 60px 0;
+  }
+  
+  .watch-card {
+    border-radius: 20px;
+    max-width: 100%;
+  }
+  
+  .watch-image-wrapper {
+    height: 220px;
+  }
+  
+  .watch-info {
+    padding: 1.5rem;
+  }
+  
+  .watch-header {
+    flex-direction: column;
+    gap: 0.5rem;
+  }
+  
+  .watch-name {
+    font-size: 1.3rem;
+  }
+  
+  .watch-modal-overlay {
+    padding: 1rem;
+  }
+  
+  .modal-image {
+    height: 250px;
+  }
+  
+  .modal-info {
+    padding: 1rem;
+  }
+  
+  .modal-header h3 {
+    font-size: 1.5rem;
+  }
+  
+  .modal-price {
+    font-size: 1.3rem;
+  }
+}
+
+/* Animation for scroll reveal */
+@keyframes watchSlideIn {
+  from {
+    opacity: 0;
+    transform: translateY(40px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.watch-card {
+  animation: watchSlideIn 0.6s ease forwards;
+}
+
+.watch-card:nth-child(1) { animation-delay: 0.1s; }
+.watch-card:nth-child(2) { animation-delay: 0.2s; }
+.watch-card:nth-child(3) { animation-delay: 0.3s; }
+.watch-card:nth-child(4) { animation-delay: 0.4s; }

@@ -1,0 +1,601 @@
+/* Store Locator Section */
+.store-locator {
+  padding: 100px 0;
+  background: white;
+  position: relative;
+}
+
+.store-locator::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-image: 
+    radial-gradient(circle at 25% 25%, rgba(16, 185, 129, 0.05) 0%, transparent 50%),
+    radial-gradient(circle at 75% 75%, rgba(249, 115, 22, 0.05) 0%, transparent 50%);
+  pointer-events: none;
+}
+
+/* Header */
+.store-header {
+  text-align: center;
+  margin-bottom: 3rem;
+  position: relative;
+  z-index: 2;
+}
+
+.store-heading {
+  font-size: clamp(2.5rem, 5vw, 4rem);
+  font-weight: 700;
+  color: #1f2937;
+  margin-bottom: 1rem;
+  position: relative;
+}
+
+.store-heading::after {
+  content: '';
+  position: absolute;
+  bottom: -10px;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 140px;
+  height: 4px;
+  background: linear-gradient(135deg, #f97316, #ea580c);
+  border-radius: 2px;
+}
+
+.store-subtitle {
+  font-size: 1.2rem;
+  color: #6b7280;
+  max-width: 600px;
+  margin: 0 auto;
+  line-height: 1.6;
+}
+
+/* Controls */
+.store-controls {
+  display: flex;
+  gap: 1.5rem;
+  justify-content: center;
+  margin-bottom: 3rem;
+  flex-wrap: wrap;
+  position: relative;
+  z-index: 2;
+}
+
+.search-wrapper {
+  position: relative;
+  flex: 1;
+  max-width: 400px;
+}
+
+.store-search {
+  width: 100%;
+  padding: 1rem 3rem 1rem 1.5rem;
+  border: 2px solid #e5e7eb;
+  border-radius: 25px;
+  font-size: 1rem;
+  transition: all 0.3s ease;
+  background: white;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.08);
+}
+
+.store-search:focus {
+  outline: none;
+  border-color: #f97316;
+  box-shadow: 0 4px 20px rgba(249, 115, 22, 0.2);
+}
+
+.search-icon {
+  position: absolute;
+  right: 1rem;
+  top: 50%;
+  transform: translateY(-50%);
+  color: #9ca3af;
+  font-size: 1.2rem;
+}
+
+.filter-wrapper {
+  position: relative;
+}
+
+.city-filter {
+  padding: 1rem 3rem 1rem 1.5rem;
+  border: 2px solid #e5e7eb;
+  border-radius: 25px;
+  font-size: 1rem;
+  background: white;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  appearance: none;
+  background-image: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' fill='none' viewBox='0 0 20 20'%3e%3cpath stroke='%236b7280' stroke-linecap='round' stroke-linejoin='round' stroke-width='1.5' d='m6 8 4 4 4-4'/%3e%3c/svg%3e");
+  background-position: right 1rem center;
+  background-repeat: no-repeat;
+  background-size: 1.5em 1.5em;
+  min-width: 200px;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.08);
+}
+
+.city-filter:focus {
+  outline: none;
+  border-color: #f97316;
+  box-shadow: 0 4px 20px rgba(249, 115, 22, 0.2);
+}
+
+/* Results */
+.store-results {
+  position: relative;
+  z-index: 2;
+}
+
+.results-header {
+  margin-bottom: 2rem;
+}
+
+.results-header h3 {
+  font-size: 1.3rem;
+  color: #374151;
+  font-weight: 600;
+}
+
+/* Store Grid */
+.store-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(400px, 1fr));
+  gap: 2rem;
+  margin-bottom: 4rem;
+}
+
+/* Store Cards */
+.store-card {
+  background: white;
+  border-radius: 25px;
+  overflow: hidden;
+  box-shadow: 0 15px 50px rgba(0, 0, 0, 0.1);
+  transition: all 0.4s ease;
+  position: relative;
+}
+
+.store-card.featured::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 4px;
+  background: linear-gradient(135deg, #fbbf24, #f59e0b);
+  z-index: 3;
+}
+
+.store-card:hover {
+  transform: translateY(-10px);
+  box-shadow: 0 25px 70px rgba(0, 0, 0, 0.15);
+}
+
+.featured-badge {
+  position: absolute;
+  top: 1rem;
+  left: 1rem;
+  background: linear-gradient(135deg, #fbbf24, #f59e0b);
+  color: white;
+  padding: 0.5rem 1rem;
+  border-radius: 20px;
+  font-size: 0.8rem;
+  font-weight: 600;
+  z-index: 4;
+  box-shadow: 0 4px 15px rgba(251, 191, 36, 0.3);
+}
+
+/* Store Image */
+.store-image-wrapper {
+  position: relative;
+  height: 200px;
+  overflow: hidden;
+}
+
+.store-card img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform 0.5s ease;
+}
+
+.store-card:hover img {
+  transform: scale(1.1);
+}
+
+.store-overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: rgba(0, 0, 0, 0.6);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  opacity: 0;
+  transition: opacity 0.3s ease;
+}
+
+.store-card:hover .store-overlay {
+  opacity: 1;
+}
+
+.directions-btn {
+  background: white;
+  color: #1f2937;
+  border: none;
+  padding: 1rem 1.5rem;
+  border-radius: 50px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  transform: translateY(20px);
+}
+
+.store-card:hover .directions-btn {
+  transform: translateY(0);
+}
+
+.directions-btn:hover {
+  background: #f97316;
+  color: white;
+}
+
+/* Store Info */
+.store-info {
+  padding: 2rem;
+}
+
+.store-main {
+  margin-bottom: 1.5rem;
+}
+
+.store-name {
+  font-size: 1.4rem;
+  font-weight: 600;
+  color: #1f2937;
+  margin: 0 0 0.5rem 0;
+}
+
+.store-city {
+  font-size: 1rem;
+  color: #f97316;
+  font-weight: 600;
+}
+
+/* Store Details */
+.store-details {
+  margin-bottom: 1.5rem;
+}
+
+.detail-item {
+  display: flex;
+  align-items: center;
+  margin: 0.8rem 0;
+  font-size: 0.9rem;
+}
+
+.detail-icon {
+  font-size: 1rem;
+  margin-right: 0.8rem;
+  width: 20px;
+  text-align: center;
+}
+
+.detail-text {
+  color: #6b7280;
+  line-height: 1.4;
+}
+
+/* Store Hours */
+.store-hours {
+  margin-bottom: 1.5rem;
+}
+
+.store-hours h4 {
+  font-size: 1.1rem;
+  font-weight: 600;
+  color: #1f2937;
+  margin-bottom: 0.8rem;
+}
+
+.hours-grid {
+  display: flex;
+  flex-direction: column;
+  gap: 0.3rem;
+}
+
+.hours-item {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  font-size: 0.9rem;
+  padding: 0.2rem 0;
+}
+
+.hours-label {
+  color: #6b7280;
+  font-weight: 500;
+}
+
+.hours-time {
+  color: #374151;
+  font-weight: 600;
+}
+
+/* Services */
+.store-services {
+  margin-bottom: 2rem;
+}
+
+.store-services h4 {
+  font-size: 1.1rem;
+  font-weight: 600;
+  color: #1f2937;
+  margin-bottom: 0.8rem;
+}
+
+.services-list {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+}
+
+.service-tag {
+  background: #f3f4f6;
+  color: #374151;
+  padding: 0.4rem 0.8rem;
+  border-radius: 15px;
+  font-size: 0.8rem;
+  font-weight: 500;
+  transition: all 0.3s ease;
+}
+
+.service-tag:hover {
+  background: #f97316;
+  color: white;
+}
+
+/* Store Actions */
+.store-actions {
+  display: flex;
+  gap: 1rem;
+}
+
+.contact-store-btn,
+.visit-store-btn {
+  flex: 1;
+  padding: 1rem;
+  border-radius: 15px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  font-size: 0.9rem;
+}
+
+.contact-store-btn {
+  background: linear-gradient(135deg, #f97316, #ea580c);
+  color: white;
+  border: none;
+}
+
+.visit-store-btn {
+  background: transparent;
+  color: #f97316;
+  border: 2px solid #f97316;
+}
+
+.contact-store-btn:hover,
+.visit-store-btn:hover {
+  transform: translateY(-2px);
+}
+
+.visit-store-btn:hover {
+  background: #f97316;
+  color: white;
+}
+
+/* Store CTA */
+.store-cta {
+  background: linear-gradient(135deg, #1f2937, #374151);
+  border-radius: 25px;
+  padding: 3rem;
+  text-align: center;
+  position: relative;
+  overflow: hidden;
+}
+
+.store-cta::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-image: 
+    radial-gradient(circle at 30% 70%, rgba(249, 115, 22, 0.1) 0%, transparent 50%);
+  pointer-events: none;
+}
+
+.cta-content {
+  position: relative;
+  z-index: 2;
+}
+
+.cta-content h3 {
+  font-size: 2rem;
+  color: white;
+  font-weight: 700;
+  margin-bottom: 1rem;
+}
+
+.cta-content p {
+  font-size: 1.1rem;
+  color: rgba(255, 255, 255, 0.8);
+  margin-bottom: 2rem;
+  max-width: 600px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.cta-actions {
+  display: flex;
+  gap: 1rem;
+  justify-content: center;
+  flex-wrap: wrap;
+}
+
+.notify-btn,
+.online-btn {
+  padding: 1rem 2rem;
+  border-radius: 50px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  font-size: 1rem;
+}
+
+.notify-btn {
+  background: linear-gradient(135deg, #f97316, #ea580c);
+  color: white;
+  border: none;
+}
+
+.online-btn {
+  background: transparent;
+  color: white;
+  border: 2px solid white;
+}
+
+.notify-btn:hover,
+.online-btn:hover {
+  transform: translateY(-2px);
+}
+
+.online-btn:hover {
+  background: white;
+  color: #1f2937;
+}
+
+/* Mobile Responsive */
+@media (max-width: 768px) {
+  .store-locator {
+    padding: 80px 0;
+  }
+  
+  .store-controls {
+    flex-direction: column;
+    align-items: stretch;
+  }
+  
+  .search-wrapper,
+  .filter-wrapper {
+    max-width: 100%;
+  }
+  
+  .city-filter {
+    min-width: 100%;
+  }
+  
+  .store-grid {
+    grid-template-columns: 1fr;
+    gap: 1.5rem;
+  }
+  
+  .store-card {
+    max-width: 500px;
+    margin: 0 auto;
+  }
+  
+  .store-actions {
+    flex-direction: column;
+  }
+  
+  .cta-actions {
+    flex-direction: column;
+    align-items: center;
+  }
+  
+  .notify-btn,
+  .online-btn {
+    width: 100%;
+    max-width: 300px;
+  }
+}
+
+@media (max-width: 480px) {
+  .store-locator {
+    padding: 60px 0;
+  }
+  
+  .store-card {
+    border-radius: 20px;
+    max-width: 100%;
+  }
+  
+  .store-image-wrapper {
+    height: 150px;
+  }
+  
+  .store-info {
+    padding: 1.5rem;
+  }
+  
+  .store-name {
+    font-size: 1.2rem;
+  }
+  
+  .hours-item {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 0.2rem;
+  }
+  
+  .services-list {
+    gap: 0.3rem;
+  }
+  
+  .service-tag {
+    font-size: 0.7rem;
+    padding: 0.3rem 0.6rem;
+  }
+  
+  .store-cta {
+    padding: 2rem 1.5rem;
+  }
+  
+  .cta-content h3 {
+    font-size: 1.5rem;
+  }
+  
+  .cta-content p {
+    font-size: 1rem;
+  }
+}
+
+/* Animation for scroll reveal */
+@keyframes storeSlideIn {
+  from {
+    opacity: 0;
+    transform: translateY(30px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.store-card {
+  animation: storeSlideIn 0.6s ease forwards;
+}
+
+.store-card:nth-child(1) { animation-delay: 0.1s; }
+.store-card:nth-child(2) { animation-delay: 0.2s; }
+.store-card:nth-child(3) { animation-delay: 0.3s; }
+.store-card:nth-child(4) { animation-delay: 0.4s; }
+.store-card:nth-child(5) { animation-delay: 0.5s; }
+.store-card:nth-child(6) { animation-delay: 0.6s; }

@@ -2,7 +2,8 @@ import React from "react";
 import Header from "./components/Header";
 import Collections from "./components/Collections";
 import Technology from "./components/Technology";
-import WatchDetails from "./Components/WatchDetails";
+import WatchDetails from "./components/WatchDetails";
+
 import StoreLocator from "./components/StoreLocator";
 import About from "./components/About";
 import Contact from "./components/Contact";

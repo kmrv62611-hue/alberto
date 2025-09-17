@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import "./WatchDetails.css";
+import "./css/WatchDetails.css";
 import {
   FaWrench,
   FaCogs,

@@ -1,12 +1,12 @@
-import React from 'react';
-import "./About.css";
+import React from "react";
+import "./css/About.css";
 
 function About() {
   const stats = [
     { number: "25+", label: "Years Experience", icon: "🏆" },
     { number: "500+", label: "Watch Models", icon: "⌚" },
     { number: "50+", label: "Global Partners", icon: "🌍" },
-    { number: "10K+", label: "Happy Customers", icon: "😊" }
+    { number: "10K+", label: "Happy Customers", icon: "😊" },
   ];
 
   const values = [
@@ -14,26 +14,30 @@ function About() {
       id: 1,
       icon: "💎",
       title: "Quality Excellence",
-      description: "We partner only with the finest watchmakers and maintain the highest standards of quality in every timepiece we offer."
+      description:
+        "We partner only with the finest watchmakers and maintain the highest standards of quality in every timepiece we offer.",
     },
     {
       id: 2,
       icon: "🔧",
       title: "Expert Craftsmanship",
-      description: "Our team of skilled horologists brings decades of experience in watch repair, restoration, and customization."
+      description:
+        "Our team of skilled horologists brings decades of experience in watch repair, restoration, and customization.",
     },
     {
       id: 3,
       icon: "🤝",
       title: "Customer First",
-      description: "Every interaction is built on trust, transparency, and our commitment to helping you find the perfect timepiece."
+      description:
+        "Every interaction is built on trust, transparency, and our commitment to helping you find the perfect timepiece.",
     },
     {
       id: 4,
       icon: "🌟",
       title: "Innovation & Heritage",
-      description: "We honor traditional watchmaking while embracing modern technology and design innovations."
-    }
+      description:
+        "We honor traditional watchmaking while embracing modern technology and design innovations.",
+    },
   ];
 
   const team = [
@@ -41,23 +45,26 @@ function About() {
       id: 1,
       name: "Alberto Rodriguez",
       position: "Founder & Master Horologist",
-      image: "https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=300&h=300&fit=crop&auto=format",
-      bio: "With over 30 years in luxury timepieces, Alberto founded the company with a vision to make exceptional watches accessible to all."
+      image:
+        "https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=300&h=300&fit=crop&auto=format",
+      bio: "With over 30 years in luxury timepieces, Alberto founded the company with a vision to make exceptional watches accessible to all.",
     },
     {
       id: 2,
       name: "Maria Santos",
       position: "Head of Design",
-      image: "https://images.unsplash.com/photo-1494790108755-2616b612b5bc?w=300&h=300&fit=crop&auto=format",
-      bio: "Maria leads our design team, bringing fresh perspectives while respecting the timeless traditions of watchmaking."
+      image:
+        "https://images.unsplash.com/photo-1494790108755-2616b612b5bc?w=300&h=300&fit=crop&auto=format",
+      bio: "Maria leads our design team, bringing fresh perspectives while respecting the timeless traditions of watchmaking.",
     },
     {
       id: 3,
       name: "James Chen",
       position: "Technical Director",
-      image: "https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?w=300&h=300&fit=crop&auto=format",
-      bio: "James oversees our technical operations and ensures every watch meets our exacting standards for precision and reliability."
-    }
+      image:
+        "https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?w=300&h=300&fit=crop&auto=format",
+      bio: "James oversees our technical operations and ensures every watch meets our exacting standards for precision and reliability.",
+    },
   ];
 
   return (
@@ -69,17 +76,26 @@ function About() {
             <div className="about-text">
               <h2 className="about-heading">About ALBERTO WATCH</h2>
               <div className="heading-underline"></div>
-              
+
               <p className="about-intro">
-                ALBERTO WATCH is your guide into the world of timepieces. From luxury craftsmanship to modern smartwatch innovations, we connect you with the details, the technology, and the stores where you can experience them.
+                ALBERTO WATCH is your guide into the world of timepieces. From
+                luxury craftsmanship to modern smartwatch innovations, we
+                connect you with the details, the technology, and the stores
+                where you can experience them.
               </p>
-              
+
               <p className="about-description">
-                Founded on the principles of excellence and innovation, we curate only the finest watches from renowned manufacturers worldwide. Our expertise spans decades, ensuring you find the perfect timepiece for every moment of your life.
+                Founded on the principles of excellence and innovation, we
+                curate only the finest watches from renowned manufacturers
+                worldwide. Our expertise spans decades, ensuring you find the
+                perfect timepiece for every moment of your life.
               </p>
 
               <p className="about-mission">
-                Our mission is to preserve the art of traditional watchmaking while embracing the future of timekeeping technology. We believe that a watch is more than just a tool to tell time – it's a reflection of your personality, style, and values.
+                Our mission is to preserve the art of traditional watchmaking
+                while embracing the future of timekeeping technology. We believe
+                that a watch is more than just a tool to tell time – it's a
+                reflection of your personality, style, and values.
               </p>
 
               <div className="about-cta">
@@ -100,11 +116,13 @@ function About() {
                 <div className="image-overlay">
                   <div className="overlay-content">
                     <h3>Heritage & Innovation</h3>
-                    <p>Combining traditional craftsmanship with modern technology</p>
+                    <p>
+                      Combining traditional craftsmanship with modern technology
+                    </p>
                   </div>
                 </div>
               </div>
-              
+
               <div className="floating-badge">
                 <div className="badge-content">
                   <div className="badge-number">1998</div>
@@ -161,18 +179,14 @@ function About() {
             {team.map((member) => (
               <div key={member.id} className="team-card hover-lift">
                 <div className="team-image-wrapper">
-                  <img 
-                    src={member.image} 
-                    alt={member.name}
-                    loading="lazy"
-                  />
+                  <img src={member.image} alt={member.name} loading="lazy" />
                   <div className="team-overlay">
                     <button className="team-contact-btn">
-                      Contact {member.name.split(' ')[0]}
+                      Contact {member.name.split(" ")[0]}
                     </button>
                   </div>
                 </div>
-                
+
                 <div className="team-info">
                   <h4 className="team-name">{member.name}</h4>
                   <div className="team-position">{member.position}</div>
@@ -189,8 +203,9 @@ function About() {
             <div className="commitment-text">
               <h3>Our Commitment to Excellence</h3>
               <p>
-                Every watch in our collection is carefully selected and inspected by our team of experts. 
-                We stand behind the quality and authenticity of every timepiece, offering comprehensive 
+                Every watch in our collection is carefully selected and
+                inspected by our team of experts. We stand behind the quality
+                and authenticity of every timepiece, offering comprehensive
                 warranties and exceptional after-sales service.
               </p>
               <div className="commitment-features">
@@ -212,7 +227,7 @@ function About() {
                 </div>
               </div>
             </div>
-            
+
             <div className="commitment-image">
               <img
                 src="https://images.unsplash.com/photo-1594534475808-b18fc33b045e?w=500&h=400&fit=crop&auto=format"

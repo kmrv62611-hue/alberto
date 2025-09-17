@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import "./Footer.css";
+import "./css/Footer.css";
 import {
   FaInstagram,
   FaFacebookF,

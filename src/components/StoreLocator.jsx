@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import "./StoreLocator.css";
+import "./css/StoreLocator.css";
 import {
   FaPhone,
   FaMapMarkerAlt,

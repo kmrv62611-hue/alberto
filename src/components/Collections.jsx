@@ -13,14 +13,14 @@ function Collections() {
     {
       id: 1,
       name: "Luxury Watches",
-      image: "/public/Images/a6c85cd3-7be9-4d6f-8a16-ce00905ad920.jpg",
+      image: "/Images/a6c85cd3-7be9-4d6f-8a16-ce00905ad920.jpg",
       description: "Exquisite craftsmanship meets timeless elegance",
       features: ["Swiss Movement", "Premium Materials", "Limited Edition"],
     },
     {
       id: 2,
       name: "Smart Watches",
-      image: "/public/Images/Smart Watches - itel.jpg",
+      image: "/Images/Smart Watches - itel.jpg",
       description: "Technology seamlessly integrated into style",
       features: ["Health Tracking", "GPS Navigation", "Smart Notifications"],
     },
@@ -35,7 +35,7 @@ function Collections() {
     {
       id: 4,
       name: "Vintage Watches",
-      image: "/public/Images/in stock.jpg",
+      image: "/Images/in stock.jpg",
       description: "Classic designs with timeless appeal",
       features: ["Heritage Design", "Mechanical Movement", "Collector's Item"],
     },
